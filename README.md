@@ -66,9 +66,62 @@
         ```
 
 
+###  Jest
+- npm install  --save-dev jest babel-jest
+- jest.config.json 파일 생성
+- ```json
+    {
+        "clearMocks" : true,
+        "collectCoverage" : true,
+        "verbose" : true,
+        "testEnvironment" : "jsdom"
+    }
+    
+- script수정
+- ```json
+    "test:jest" : "jest --watchAll --collect[=tru]
+    --logHeapUsage"
+- test 폴더 하위에 (원하는 파일명).test.js 파일 생성
+- **주의 사항!!**
+    -```javascript
+        // export할 함수 || 객체가 한개일 경우 
+        const sum = (a,b) => {
+            return a+b;
+        };
+
+        export default sum;
+        //테스트 파일
+        import sum from "../src/index.js";
+        //테스트 컨텍스트
+    ```
+    -```javascript
+        //export할 함수 || 객체가 다수일 경우
+        export const sum = (a, b) => {
+            return a+b;
+        };
+
+        export const minus = (a, b) => {
+            return a-b
+        };
+        //테스트 파일
+
+        import { sum, minus } from "../src/index.js";
+        //테스트 컨텍스트
+```
 
 
-- [ ]  Jest
+
+### parcel
+
+- npm install --save-dev parcel
+- npx parcel src/index.html (만약 src폴더 하위에 index.html이 있다면)
+- ```json
+ "scripts" : {
+    "start" : "parcel",
+    "build" : "parcel build"
+    },
+```
+
 - [ ]  Cypress
 
 

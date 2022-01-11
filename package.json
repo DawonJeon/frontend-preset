@@ -7,7 +7,8 @@
     "lint": "eslint ./index.js --fix",
     "start": "nodemon index.js",
     "starter": "nodemon --exec babel-node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:jest": "jest --watchAll --collect[=true] --logHeapUsage"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +18,14 @@
     "@babel/core": "^7.16.7",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.8",
+    "babel-jest": "^27.4.6",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-tui": "^5.0.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
     "nodemon": "^2.0.15",
+    "parcel": "^2.1.1",
     "prettier": "^2.5.1"
   }
 }
